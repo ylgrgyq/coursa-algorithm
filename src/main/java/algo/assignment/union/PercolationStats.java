@@ -1,4 +1,4 @@
-package algo.lecture.union;
+package algo.assignment.union;
 
 import static com.google.common.base.Preconditions.*;
 

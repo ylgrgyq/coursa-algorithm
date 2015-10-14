@@ -1,4 +1,6 @@
-package algo.lecture.union;
+package algo.assignment.union;
+
+import algo.lecture.union.QuickUnionPathCompression;
 
 import java.util.ArrayList;
 import java.util.List;

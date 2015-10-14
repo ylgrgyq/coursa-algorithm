@@ -1,8 +1,7 @@
 package algo.lecture.union;
 
+import algo.assignment.union.Percolation;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created on 15/9/24.
