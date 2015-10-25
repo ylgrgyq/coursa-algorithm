@@ -96,6 +96,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         int randIndex = nextN(head, rand);
         Item retItem = data[randIndex];
 
+        // ************ Key Point ************
         Item h = data[head];
         if (randIndex != head) {
             data[randIndex] = h;
