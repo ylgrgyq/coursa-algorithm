@@ -19,33 +19,13 @@ public class SelectionSort{
         for (int i = 0; i < src.length; ++i) {
             int min = i;
             for (int j = i + 1; j < src.length; ++j){
-                if (less(src[j], src[min])){
+                if (Helper.less(src[j], src[min])){
                     min = j;
                 }
             }
 
-            swap(src, i, min);
+            Helper.swap(src, i, min);
         }
-    }
-
-    private static <T extends Comparable<? super T>> boolean less(T a, T b){
-        return a.compareTo(b) < 0;
-    }
-
-    private static <T extends Comparable<? super T>> void swap(T[] a, int i, int j){
-        T swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
-    }
-
-    private static <T extends Comparable<? super T>> boolean test(T[] src){
-        for (int i = 1; i < src.length; i++) {
-            if (less(src[i], src[i - 1])){
-                return false;
-            }
-        }
-
-        return true;
     }
 
     public static void main(String[] args) {
@@ -53,7 +33,7 @@ public class SelectionSort{
 
         SelectionSort.sort(a);
 
-        assert SelectionSort.test(a);
+        assert Helper.test(a);
 
         System.out.println(Arrays.toString(a));
     }
