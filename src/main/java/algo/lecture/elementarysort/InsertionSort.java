@@ -25,7 +25,7 @@ public class InsertionSort {
 
         InsertionSort.sort(a);
 
-        assert Helper.test(a);
+        assert Helper.isSorted(a);
 
         System.out.println(Arrays.toString(a));
     }

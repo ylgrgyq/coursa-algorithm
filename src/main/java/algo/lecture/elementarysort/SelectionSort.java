@@ -33,7 +33,7 @@ public class SelectionSort{
 
         SelectionSort.sort(a);
 
-        assert Helper.test(a);
+        assert Helper.isSorted(a);
 
         System.out.println(Arrays.toString(a));
     }
