@@ -22,22 +22,25 @@ public class MergeSortIteration {
         assert Helper.isSorted(a, lo, mid);
         assert Helper.isSorted(a, mid, hi);
 
-        for (int i = lo; i < hi; i++) {
-            aux[i] = a[i];
-        }
+        System.arraycopy(a, lo, aux, lo, hi - lo);
 
         int i = lo;
         int j = mid;
-        for (int cur = lo; cur < hi; cur++) {
-            if (i >= mid){
-                a[cur] = aux[j++];
-            } else if (j >= hi){
-                a[cur] = aux[i++];
-            } else if (Helper.less(aux[i], aux[j])){
-                a[cur] = aux[i++];
+        int cur = lo;
+        while (i < mid && j < hi){
+            if (Helper.less(aux[i], aux[j])){
+                a[cur++] = aux[i++];
             } else {
-                a[cur] = aux[j++];
+                a[cur++] = aux[j++];
             }
+        }
+
+        while (i < mid){
+            a[cur++] = aux[i++];
+        }
+
+        while (j < hi) {
+            a[cur++] = aux[j++];
         }
     }
 
