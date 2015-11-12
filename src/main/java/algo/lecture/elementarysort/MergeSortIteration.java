@@ -13,14 +13,14 @@ public class MergeSortIteration {
 
         for (int step = 1; step < a.length; step *= 2) {
             for (int cur = 0; cur < a.length - step; cur += 2 * step) {
-                merge(a, aux, cur, cur + step, Math.min(cur + 2 * step, a.length - 1));
+                merge(a, aux, cur, cur + step, Math.min(cur + 2 * step, a.length));
             }
         }
     }
 
     private static <T extends Comparable<? super T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
         assert Helper.isSorted(a, lo, mid);
-        assert Helper.isSorted(a, mid, hi);
+        assert Helper.isSorted(a, mid, hi - 1);
 
         System.arraycopy(a, lo, aux, lo, hi - lo);
 
@@ -45,7 +45,7 @@ public class MergeSortIteration {
     }
 
     public static void main(String[] args) {
-        Integer[] a = {98, 21, 45, 91, 87, 66, 53, 120, 111};
+        Integer[] a = {98, 21, 45, 91, 87, 1, 1};
 
         MergeSortIteration.sort(a);
 
