@@ -9,7 +9,11 @@ import java.util.Arrays;
 public class InsertionSort {
 
     public static <T extends Comparable<? super T>> void sort(T[] src){
-        for (int i = 1; i < src.length; ++i) {
+        sort(src, 0, src.length);
+    }
+
+    public static <T extends Comparable<? super T>> void sort(T[] src, int lo, int hi){
+        for (int i = lo + 1; i < hi; ++i) {
             T key = src[i];
             int j = i - 1;
             while (j >= 0 && Helper.less(key, src[j])){
